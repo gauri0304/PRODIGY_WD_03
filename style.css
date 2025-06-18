@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f1c9da, #b56387);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #4b0082;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin: 20px 0;
+  color: #8d3136;
+  text-align: center;
+}
+
+.mode-selection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mode-buttons {
+  margin-top: 15px;
+}
+
+.mode-btn, .btn {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3d5272;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mode-btn:hover, .btn:hover {
+  background-color: #ff6347;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: white;
+  font-size: 2rem;
+  color: #8d3136;
+  border: 2px solid #8d3136;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.msg-container {
+  position: fixed;
+  top: 30%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.reset {
+  background-color: #ff6347;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #ff4500;
+}
+
+.win-box {
+  background-color: #90ee90;
+  font-weight: bold;
+  color: #000;
+}
+
