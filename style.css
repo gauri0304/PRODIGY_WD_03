@@ -123,7 +123,7 @@ h2 {
   font-size: 1rem;
   border: none;
   border-radius: 8px;
-  background-color: #3d5272;
+  background-color: #4b0082;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -147,14 +147,28 @@ h2 {
 }
 
 .box {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #8d3136;
-  border: 2px solid #8d3136;
   border-radius: 10px;
+  box-shadow: 0 7px 0px #8d3136;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+  top: 0;
   cursor: pointer;
+  border: none; /* Removes border since shadow is used instead */
+  text-align: center;
+  line-height: 100px; /* Vertically centers text */
+  margin: 10px;
+}
+
+.box:active {
+  top: 3px;
+  box-shadow: 0 2px 0px #8d3136;
+  transition: all 0.2s;
 }
 
 .msg-container {
@@ -165,6 +179,7 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   text-align: center;
+  z-index: 9999; /* 🔧 Add this line to bring it to front */
 }
 
 .hide {
@@ -172,7 +187,7 @@ h2 {
 }
 
 .win-box {
-  background-color: #90ee90;
+  background-color: #90d0ee;
   font-weight: bold;
   color: #000;
 }
