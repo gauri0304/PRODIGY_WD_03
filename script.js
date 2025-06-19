@@ -8,6 +8,7 @@ let pvpBtn = document.querySelector("#pvp-mode");
 let aiBtn = document.querySelector("#ai-mode");
 let mainGame = document.querySelector("#main-game");
 let modeSelection = document.querySelector(".mode-selection");
+let backBtn = document.querySelector("#back-btn"); // 🔹 Select the back button
 
 let isPvP = true;
 let turnO = true;
@@ -41,6 +42,13 @@ function startGame() {
   resetGame();
 }
 
+// 🔹 Back Button Event
+backBtn.addEventListener("click", () => {
+  mainGame.classList.add("hide");
+  modeSelection.classList.remove("hide");
+  resetGame(); // Optional: clear board when returning
+});
+
 // Game Reset
 function resetGame() {
   turnO = true;
@@ -64,17 +72,17 @@ boxes.forEach((box) => {
       }
     } else {
       // Player vs AI Mode
-      if (!turnO) return; // ignore click if it's AI's turn
+      if (!turnO) return;
 
       box.innerText = "O";
       box.disabled = true;
       checkWinner();
 
       if (!gameOver) {
-        turnO = false; // switch to AI
+        turnO = false;
         setTimeout(() => {
           aiMove();
-          if (!gameOver) turnO = true; // switch back to player after AI
+          if (!gameOver) turnO = true;
         }, 500);
       }
     }
@@ -96,7 +104,6 @@ function aiMove() {
 }
 
 function getBestMove() {
-  // Try to win
   for (let i = 0; i < boxes.length; i++) {
     if (boxes[i].innerText === "") {
       boxes[i].innerText = "X";
@@ -108,7 +115,6 @@ function getBestMove() {
     }
   }
 
-  // Try to block player
   for (let i = 0; i < boxes.length; i++) {
     if (boxes[i].innerText === "") {
       boxes[i].innerText = "O";
@@ -120,16 +126,13 @@ function getBestMove() {
     }
   }
 
-  // Take center
   if (boxes[4].innerText === "") return 4;
 
-  // Take corners
   let corners = [0, 2, 6, 8];
   for (let idx of corners) {
     if (boxes[idx].innerText === "") return idx;
   }
 
-  // Take any side
   for (let i = 0; i < boxes.length; i++) {
     if (boxes[i].innerText === "") return i;
   }
