@@ -20,10 +20,90 @@ body {
   font-size: 2.5rem;
   color: #4b0082;
   margin-bottom: 10px;
+  animation: purpleLights 5s 750ms linear infinite, fadeSlideIn 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title:hover {
+  color: #872d72; /* deep magenta */
+  transform: scale(1.03);
+}
+
+@keyframes purpleLights {
+  0% {
+    color: #4b0082;
+    text-shadow:
+      0 0 1em rgba(135, 45, 114, 0.2),    /* #872d72 */
+      0 0 0.125em rgba(135, 45, 114, 0.3),
+      -1em -0.125em 0.5em rgba(255, 192, 203, 0), /* soft pink */
+      1em 0.125em 0.5em rgba(186, 85, 211, 0);    /* orchid */
+  }
+
+  30% {
+    color: #872d72;
+    text-shadow:
+      0 0 1em rgba(135, 45, 114, 0.5),
+      0 0 0.125em rgba(199, 21, 133, 0.5), /* medium violet red */
+      -0.5em -0.125em 0.25em rgba(255, 160, 122, 0.2), /* light salmon */
+      0.5em 0.125em 0.25em rgba(186, 85, 211, 0.4);
+  }
+
+  40% {
+    color: #9d4ba3; /* lighter purple blend */
+    text-shadow:
+      0 0 1em rgba(199, 21, 133, 0.5),
+      0 0 0.125em rgba(221, 160, 221, 0.5), /* plum */
+      -0.25em -0.125em 0.125em rgba(255, 160, 122, 0.2),
+      0.25em 0.125em 0.125em rgba(186, 85, 211, 0.4);
+  }
+
+  70% {
+    color: #872d72;
+    text-shadow:
+      0 0 1em rgba(135, 45, 114, 0.5),
+      0 0 0.125em rgba(199, 21, 133, 0.5),
+      0.5em -0.125em 0.25em rgba(255, 160, 122, 0.2),
+      -0.5em 0.125em 0.25em rgba(186, 85, 211, 0.4);
+  }
+
+  100% {
+    color: #4b0082;
+    text-shadow:
+      0 0 1em rgba(135, 45, 114, 0.2),
+      0 0 0.125em rgba(135, 45, 114, 0.3),
+      1em -0.125em 0.5em rgba(255, 192, 203, 0),
+      -1em 0.125em 0.5em rgba(186, 85, 211, 0);
+  }
+}
+
+h2 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
-  margin: 20px 0;
+  margin: 10px 0;
   color: #8d3136;
   text-align: center;
 }
@@ -63,7 +143,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .box {
@@ -97,44 +177,64 @@ body {
   color: #000;
 }
 
-.reset {
-  background-color: #ff6347;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.reset:hover {
-  background-color: #ff4500;
-}
-
+.reset,
 .back-button {
-  margin: 0 auto;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #ff6347;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #8d3136;
+  background-color: #ffffff;
   cursor: pointer;
+  text-shadow: none;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 0 #fff0f0, 0 10px 0 #e2a9c0;
+  -moz-box-shadow: inset 0 1px 0 #fff0f0, 0 10px 0 #e2a9c0;
+  box-shadow: inset 0 1px 0 #fff0f0, 0 10px 0 #e2a9c0;
+  transition: all 0.3s ease;
 }
 
+.reset:hover,
 .back-button:hover {
-  background-color: #ff4500;
+  background-color: #8d3136;
+  color: white;
+  box-shadow: inset 0 1px 0 #b84d52, 0 8px 0 #561d21;
+}
+
+.reset:active,
+.back-button:active {
+  top: 10px;
+  background-color: #73282c;
+
+  -webkit-box-shadow: inset 0 1px 0 #b84d52, inset 0 -3px 0 #561d21;
+  -moz-box-shadow: inset 0 1px 0 #b84d52, inset 0 -3px 0 #561d21;
+  box-shadow: inset 0 1px 0 #b84d52, inset 0 -3px 0 #561d21;
+}
+
+.reset::after,
+.back-button::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #dcdcdc;
+  border-radius: 5px;
 }
 
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 16px; /* Adjust the space between buttons here */
   margin-top: 20px;
-  flex-wrap: wrap;
 }
