@@ -8,7 +8,7 @@ let pvpBtn = document.querySelector("#pvp-mode");
 let aiBtn = document.querySelector("#ai-mode");
 let mainGame = document.querySelector("#main-game");
 let modeSelection = document.querySelector(".mode-selection");
-let backBtn = document.querySelector("#back-btn"); // 🔹 Select the back button
+let backBtn = document.querySelector("#back-btn"); 
 
 let isPvP = true;
 let turnO = true;
@@ -25,7 +25,6 @@ const winPatterns = [
   [6, 7, 8]
 ];
 
-// Mode Selection
 pvpBtn.addEventListener("click", () => {
   isPvP = true;
   startGame();
@@ -42,14 +41,13 @@ function startGame() {
   resetGame();
 }
 
-// 🔹 Back Button Event
+
 backBtn.addEventListener("click", () => {
   mainGame.classList.add("hide");
   modeSelection.classList.remove("hide");
-  resetGame(); // Optional: clear board when returning
+  resetGame(); 
 });
 
-// Game Reset
 function resetGame() {
   turnO = true;
   gameOver = false;
@@ -63,7 +61,6 @@ boxes.forEach((box) => {
     if (box.innerText !== "" || gameOver) return;
 
     if (isPvP) {
-      // Player vs Player Mode
       box.innerText = turnO ? "O" : "X";
       box.disabled = true;
       checkWinner();
@@ -71,7 +68,6 @@ boxes.forEach((box) => {
         turnO = !turnO;
       }
     } else {
-      // Player vs AI Mode
       if (!turnO) return;
 
       box.innerText = "O";
@@ -89,7 +85,6 @@ boxes.forEach((box) => {
   });
 });
 
-// AI Move (Smart)
 function aiMove() {
   if (gameOver) return;
 
@@ -192,6 +187,5 @@ function checkWinner() {
   }
 }
 
-// Reset buttons
 newGameBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
