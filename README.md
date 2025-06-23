@@ -18,6 +18,6 @@ win the game.
 PRODIGY INFOTECH
 
 Key Features:
-🎮 Dual Game Modes (PvP & AI)
-✨ Animated & Stylish UI
+🎮 Dual Game Modes (PvP & AI) <br>
+✨ Animated & Stylish UI <br>
 🕹️ User-Friendly Controls
