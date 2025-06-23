@@ -16,3 +16,8 @@ aiming to get three markers in a row to
 win the game.
 
 PRODIGY INFOTECH
+
+Key Features:
+🎮 Dual Game Modes (PvP & AI)
+✨ Animated & Stylish UI
+🕹️ User-Friendly Controls
