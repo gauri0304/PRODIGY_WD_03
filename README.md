@@ -1,23 +1,46 @@
-Task-03
+# ❌⭕ Tic Tac Toe Game – PRODIGY_WD_03
 
-Tic-Tac-Toe Web application <br>
-Live Demo: https://gauri0304.github.io/PRODIGY_WD_03/ <br>
+A fun and interactive **Tic Tac Toe Web Game** built as **Task 3** for the **Web Development Internship at Prodigy InfoTech**.
 
-To build a tic-tac-toe web application,
-you can use HTML, CSS, and JavaScript.
-By implementing functions to handle user
-clicks, track game state, and check for
-winning conditions, you can create an
-interactive and engaging tic-tac-toe
-game. With these technologies and
-functionalities, users can play against
-each other or against an Al opponent,
-aiming to get three markers in a row to
-win the game.
+🔗 [Live Demo](https://gauri0304.github.io/PRODIGY_WD_03/)
 
-PRODIGY INFOTECH
+---
 
-Key Features:
-🎮 Dual Game Modes (PvP & AI) <br>
-✨ Animated & Stylish UI <br>
-🕹️ User-Friendly Controls
+## 🎯 Features
+
+- 🎮 **Two-player mode** (X vs O)
+- ✅ Real-time win detection and game reset
+- 🎨 Visually engaging UI with hover effects
+- 💡 Smart turn indication (X or O)
+- 📱 **Fully Responsive** for all screen sizes
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5** – Game structure and layout
+- **CSS3** – Custom styling and effects
+- **JavaScript** – Game logic, turn handling, win detection, and UI updates
+
+---
+
+## 🗂️ Folder Structure
+
+PRODIGY_WD_03/ <br>
+│ <br>
+├── index.html <br>
+├── style.css <br>
+├── script.js <br>
+└── README.md
+
+---
+
+## 🚀 How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gauri0304/PRODIGY_WD_03.git
+
+2. Navigate to the project directory:
+
+   cd PRODIGY_WD_03
